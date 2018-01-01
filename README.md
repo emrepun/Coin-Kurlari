@@ -28,6 +28,6 @@ Language of the project: Turkish
 
 Important Note: It has been only 3 months since I have started coding in general. I'm aware that my code does not have a good quality.
 There is a lot of repetition of methods, and it is not much of an OOP example.
-If you could edit and make it better, I would be much obliged.
-The reason I wanted to share this projec is; even though this is a simple coded project, it can be useful for the beginners who might be interested with tab bar controllers, alamofire, swiftyjson, and core data.
+I would be much obliged, if you could edit and make it better.
+The reason I wanted to share this project is; even though this is a simple coded project, it can be useful for the beginners who might be interested with tab bar controllers, alamofire, swiftyjson, and core data.
 
