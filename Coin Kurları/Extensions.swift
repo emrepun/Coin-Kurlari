@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 extension UIViewController {
     func showAlert(title: String, message: String) {
@@ -44,5 +45,14 @@ extension String {
             }
         }
         return 0
+    }
+}
+
+extension UIViewController {
+    public func getAds(toBanner banner: GADBannerView, withAdUnit adUnit: String) {
+        let request = GADRequest()
+        banner.adUnitID = adUnit
+        banner.rootViewController = self
+        banner.load(request)
     }
 }

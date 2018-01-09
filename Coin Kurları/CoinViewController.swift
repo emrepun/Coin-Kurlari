@@ -28,6 +28,7 @@ class CoinViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tlEuroWorth = ""
     var tlCoinWorth = ""
     let connectionError = "İnternete bağlı olduğunuzdan emin olunuz. Eğer internet bağlantınız olmasına rağmen sorun yaşıyorsanız, lütfen destekle iletişime geçiniz."
+    private var adUnitId = "ca-app-pub-9102512487367812/3495048221"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +44,9 @@ class CoinViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view, typically from a nib.
         getRates()
         
-        let request = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-9102512487367812/3495048221"
-        bannerView.rootViewController = self
-        bannerView.load(request)
+        getAds(toBanner: bannerView, withAdUnit: adUnitId)
+        
+        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(CoinViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

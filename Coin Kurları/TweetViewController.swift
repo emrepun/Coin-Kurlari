@@ -18,6 +18,7 @@ class TweetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet weak var tweetView: UIWebView!
+    private var adUnitId = "ca-app-pub-9102512487367812/3495048221"
     
     //MARK: Ugly array :/
     var pickerInputs = ["bitcoin",
@@ -134,10 +135,7 @@ class TweetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         view.addSubview(activityIndicator)
         openingTweet()
         
-        let request = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-9102512487367812/3495048221"
-        bannerView.rootViewController = self
-        bannerView.load(request)
+        getAds(toBanner: bannerView, withAdUnit: adUnitId)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(GraphViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

@@ -15,6 +15,7 @@ import GoogleMobileAds
 class WalletViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var bannerView: GADBannerView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    private var adUnitId = "ca-app-pub-9102512487367812/3495048221"
 
     @IBOutlet weak var addButton: UIBarButtonItem!
     var tlDollarWorth = ""
@@ -43,10 +44,7 @@ class WalletViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         myAlertInputs()
         doConnect()
         
-        let request = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-9102512487367812/3495048221"
-        bannerView.rootViewController = self
-        bannerView.load(request)
+        getAds(toBanner: bannerView, withAdUnit: adUnitId)
     }
 
     let alert = UIAlertController(title: "Coin Ekle", message: nil, preferredStyle: .alert)

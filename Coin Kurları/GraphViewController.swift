@@ -13,6 +13,7 @@ class GraphViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var bannerView: GADBannerView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     @IBOutlet weak var graphView: UIWebView!
+    private var adUnitId = "ca-app-pub-9102512487367812/3495048221"
     
     //MARK: Ugly array :/
     var pickerInputs = ["bitcoin-btc",
@@ -131,10 +132,7 @@ class GraphViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         openingGraph()
 //        graphView.isUserInteractionEnabled = false
         
-        let request = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-9102512487367812/3495048221"
-        bannerView.rootViewController = self
-        bannerView.load(request)
+        getAds(toBanner: bannerView, withAdUnit: adUnitId)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(GraphViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

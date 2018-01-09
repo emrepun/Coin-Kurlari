@@ -21,6 +21,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     var tlDollarWorth = ""
     var tlEuroWorth = ""
     let connectionError = "İnternete bağlı olduğunuzdan emin olunuz. Eğer internet bağlantınız olmasına rağmen sorun yaşıyorsanız, lütfen destekle iletişime geçiniz."
+    private var adUnitId = "ca-app-pub-9102512487367812/3495048221"
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     
@@ -136,10 +137,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         picker.dataSource = self
         currencyTextField.inputView = picker
         
-        let request = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-9102512487367812/3495048221"
-        bannerView.rootViewController = self
-        bannerView.load(request)
+        getAds(toBanner: bannerView, withAdUnit: adUnitId)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(CalculateViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
