@@ -16,6 +16,7 @@ Bir çok kod ve fonksiyon tekrarı var, ve pek object oriented programming ilkes
 Eğer düzenleyip daha güzel hale getirirseniz memnun olurum. 
 Bu projeyi paylaşma amacım, her ne kadar basit bir kod olsa da, yeni başlayan arkadaşlara tab bar controller, alamofire, swiftyJSON gibi konularda örnek temsil edebilmek.
 
+# English
 
 Gives information about the hottest 100 cryptocurrencies.
 Language of the project: Turkish
